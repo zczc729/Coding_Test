@@ -21,7 +21,7 @@ n은 1부터 시작하며 크기에는 제한이 없다.
 예 5) 30000 => 200000002
 예 6) 1000000 => 90000000009
 """
-n = 900
+n = 30000
 num = 0
 inc_num = 0
 is_break = False
@@ -30,26 +30,26 @@ for i in range(n-1):
     is_num = False
     while True:
         inc_num += 1
-        print("i : ", i)
-        print("inc_num : ", inc_num)
+        # print("i : ", i)
+        # print("inc_num : ", inc_num)
         ls = list(str(inc_num))
 
         if len(ls) < 2:
             num = inc_num
-            print("1. num : ", num)
+            # print("1. num : ", num)
             break
         else:
             for j in range(int(len(ls) / 2)):
                 if ls[j] == ls[(j + 1) * -1]:
-                    print("2. num : ", num)
+                    # print("2. num : ", num)
                     num = inc_num
                     is_break = True
-                    print("2. T/F : ", is_break)
                 else:
                     is_break = False
+                    break
             if is_break:
                 break
-    print("3. num : ", num)
+    # print("3. num : ", num)
 
 
 print(num)
